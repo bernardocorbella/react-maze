@@ -1,5 +1,12 @@
 import React from 'react';
 
-const App = () => <div>App</div>;
+import { Maze } from 'src/maze';
+
+const App = () => (
+  <div data-testid="App">
+    App
+    <Maze />
+  </div>
+);
 
 export default App;
