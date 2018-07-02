@@ -23,7 +23,8 @@ Maze.defaultProps = {
 };
 
 Maze.propTypes = {
-  maze: PropTypes.array
+  maze: PropTypes.array,
+  lastDirection: PropTypes.string
 };
 
 export default Maze;

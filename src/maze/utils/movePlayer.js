@@ -24,11 +24,11 @@ const movePlayer = (maze, direction) => {
   }
 
   if (direction === 'up') {
-    intendedCoords = [curRowIndex + 1, curColIndex];
+    intendedCoords = [curRowIndex - 1, curColIndex];
   }
 
   if (direction === 'down') {
-    intendedCoords = [curRowIndex - 1, curColIndex];
+    intendedCoords = [curRowIndex + 1, curColIndex];
   }
 
   if (canMoveTo(maze, intendedCoords)) {
