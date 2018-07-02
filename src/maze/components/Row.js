@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Bush, Space } from 'src/maze';
+import { Bush, Space, Player } from 'src/maze';
 
 const StyledRow = styled.div`
   display: flex;
@@ -10,11 +10,19 @@ const StyledRow = styled.div`
   flex: 1 0 auto;
 `;
 
+const selectComponent = (char, i) => {
+  if (char === '#') {
+    return <Bush key={i} />;
+  } else if (char === ' ') {
+    return <Space key={i} />;
+  } else {
+    return <Player char={char} key={i} />;
+  }
+};
+
 const Row = ({ str }) => (
   <StyledRow data-testid="Row">
-    {str
-      .split('')
-      .map((tile, i) => (tile === '#' ? <Bush key={i} /> : <Space key={i} />))}
+    {str && str.split('').map(selectComponent)}
   </StyledRow>
 );
 
