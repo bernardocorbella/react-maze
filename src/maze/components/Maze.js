@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -13,7 +13,7 @@ const StyledMaze = styled.div`
 const Maze = ({ maze }) => {
   return (
     <StyledMaze data-testid="Maze">
-      {maze.map((str, idx) => <Row str={str} key={idx} />)}
+      {maze.map((row, idx) => <Row row={row} key={idx} />)}
     </StyledMaze>
   );
 };

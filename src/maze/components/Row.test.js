@@ -17,25 +17,9 @@ describe('<Row />', () => {
     expect(wrapper.is('[data-testid="Row"]')).toBe(true);
   });
 
-  it('renders a string as static elements', () => {
-    wrapper.setProps({ str: '## #' });
+  it('renders an array as static elements', () => {
+    wrapper.setProps({ row: ['#', ' ', 'p'] });
 
-    expect(wrapper.contains([<Bush />, <Bush />, <Space />, <Bush />])).toBe(
-      true
-    );
-  });
-
-  it('renders all instances of player', () => {
-    wrapper.setProps({ str: 'v' });
-    expect(wrapper.contains(<Player char="v" />)).toBe(true);
-
-    wrapper.setProps({ str: '>' });
-    expect(wrapper.contains(<Player char=">" />)).toBe(true);
-
-    wrapper.setProps({ str: '^' });
-    expect(wrapper.contains(<Player char="^" />)).toBe(true);
-
-    wrapper.setProps({ str: '<' });
-    expect(wrapper.contains(<Player char="<" />)).toBe(true);
+    expect(wrapper.contains([<Bush />, <Space />, <Player />])).toBe(true);
   });
 });

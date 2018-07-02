@@ -5,3 +5,4 @@ This is a react implementation of the maze found in [this kata](https://www.code
 ### Todo List
 
 - Update UI rendering code to take up 100% of screen.
+- Implement TypeScript.

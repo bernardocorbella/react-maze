@@ -16,7 +16,9 @@ describe('<Maze />', () => {
   });
 
   it('renders maze rows', () => {
-    wrapper.setProps({ maze: ['####', '####'] });
+    wrapper.setProps({
+      maze: [['#', '#', '#', '#', '#'], ['#', '#', 'p', '#', '#']]
+    });
 
     expect(wrapper.children().length).toEqual(2);
   });

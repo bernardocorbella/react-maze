@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Bush, Space, Player } from 'src/maze';
@@ -16,18 +17,20 @@ const selectComponent = (char, i) => {
   } else if (char === ' ') {
     return <Space key={i} />;
   } else {
-    return <Player char={char} key={i} />;
+    return <Player key={i} />;
   }
 };
 
-const Row = ({ str }) => (
-  <StyledRow data-testid="Row">
-    {str && str.split('').map(selectComponent)}
-  </StyledRow>
+const Row = ({ row }) => (
+  <StyledRow data-testid="Row">{row.map(selectComponent)}</StyledRow>
 );
 
 Row.defaultProps = {
-  str: ''
+  row: []
+};
+
+Row.propTypes = {
+  row: PropTypes.array
 };
 
 export default Row;
