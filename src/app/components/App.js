@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Maze } from 'src/maze';
+import { Maze, DEFAULT_MAZE } from 'src/maze';
 
 const App = () => (
   <div data-testid="App">
-    App
-    <Maze />
+    <Maze maze={DEFAULT_MAZE} />
   </div>
 );
 

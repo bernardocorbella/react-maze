@@ -1,5 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Space = () => <div data-testid="Space">&nsbp;</div>;
+import { Tile } from 'src/shared';
+
+const StyledSpace = Tile.extend``;
+
+const Space = () => <StyledSpace data-testid="Space" />;
 
 export default Space;
